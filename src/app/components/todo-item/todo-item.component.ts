@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./todo-item.component.css'],
 })
 
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
 
   @Input() item!: TodoItem;
   @ViewChild("itemContainer") todoItemContainer!: ElementRef;
@@ -23,9 +23,6 @@ export class TodoItemComponent implements OnInit {
     private todoService: TodoService,
     private snackBar: MatSnackBar
   ) {}
-
-  ngOnInit(): void {
-  }
 
   openEditDialog (): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
